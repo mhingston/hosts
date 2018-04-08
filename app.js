@@ -10,8 +10,15 @@ const main = async () =>
     const hosts = {};
     const sources = (await fs.readFile(path.join(__dirname, 'sources.txt'), 'utf8')).split(os.EOL);
 
-    for(const source of sources)
+    for(let source of sources)
     {
+        source = source.trim();
+
+        if(!source)
+        {
+            break;
+        }
+        
         try
         {
             let response;
@@ -27,7 +34,7 @@ const main = async () =>
             }
 
             const lines = response.split(os.EOL);
-            
+
             for(let line of lines)
             {
                 line = line.trim();
