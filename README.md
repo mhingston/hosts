@@ -12,6 +12,6 @@ Modify `sources.txt` with the host file sources you want to use. These are proce
 
     node app.js /etc/hosts
 
-or (if installed globally)
+or (if installed globally):
 
     update-hosts /etc/hosts
