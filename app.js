@@ -18,7 +18,7 @@ const main = async () =>
         {
             break;
         }
-        
+
         try
         {
             let response;
@@ -61,7 +61,7 @@ const main = async () =>
     };
 
     const fileName = path.isAbsolute(process.argv[2]) ? process.argv[2] : path.join(process.cwd(), process.argv[2]);
-    
+
     try
     {
         await fs.rename(fileName, `${fileName}.old`);
