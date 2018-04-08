@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const os = require('os')
 const path = require('path');
 const fs = require('await-fs');
@@ -6,7 +8,7 @@ const request = require('request-promise-native');
 const main = async () =>
 {
     const hosts = {};
-    const sources = (await fs.readFile('./sources.txt', 'utf8')).split(os.EOL);
+    const sources = (await fs.readFile(path.join(__dirname, 'sources.txt'), 'utf8')).split(os.EOL);
 
     for(const source of sources)
     {
@@ -51,7 +53,7 @@ const main = async () =>
         output += `${ip} ${host}${os.EOL}`;
     };
 
-    const fileName = path.isAbsolute(process.argv[2]) ? process.argv[2] : path.join(__dirname, process.argv[2]);
+    const fileName = path.isAbsolute(process.argv[2]) ? process.argv[2] : path.join(process.cwd(), process.argv[2]);
     
     try
     {
