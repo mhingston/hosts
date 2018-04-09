@@ -55,7 +55,7 @@ const main = async () =>
 
     let output = '';
 
-    for(const [ip, host] of Object.entries(hosts))
+    for(const [host, ip] of Object.entries(hosts))
     {
         output += `${ip} ${host}${os.EOL}`;
     };
